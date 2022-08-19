@@ -10,13 +10,13 @@
 </head>
 <body>
 
-        <div class="container">
+        <div class="container mt-5">
             <div class="row">
-
                 @foreach($urunler as $u)
-                <div class="col-md-4">
+                    @if($u->stok > 0)
+                <div class="col-md-4 mt-4">
                     <div class="card" style="width: 18rem;">
-{{--                            <img src="{{$urun->resim}}" class="card-img-top" alt="...">--}}
+{{--                            <img src="{{$u->resim}}" class="card-img-top">--}}
                             <div class="card-body">
                                 <h5 class="card-title" style="color: salmon; text-align: center">{{$u->adi}}</h5>
                             </div>
@@ -31,8 +31,8 @@
                         <br>
                     </div>
                 </div>
+                    @endif
                 @endforeach
-
             </div>
         </div>
 
